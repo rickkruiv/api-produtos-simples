@@ -41,7 +41,6 @@ Cria um novo produto.
 }
 ```
 
-📷:
 ![POST](image.png)
 
 ---
@@ -49,7 +48,6 @@ Cria um novo produto.
 ### 📤 GET `/produtos`
 Retorna todos os produtos cadastrados.
 
-📷:
 ![GET](image-1.png)
 
 ---
@@ -64,11 +62,11 @@ O frontend consome a API com `fetch` e exibe os dados em uma tabela Bootstrap. T
 
 ## 🛠️ Tecnologias
 
-- Java 17+
-- Spring Boot 3.x
+- Java 21
+- Spring Boot 3.4.4
 - Bootstrap 5
 - HTML, CSS e JS puro
-- Insomnia/Postman (pra testes de API)
+- Postman (pra testes de API)
 
 ---
 
