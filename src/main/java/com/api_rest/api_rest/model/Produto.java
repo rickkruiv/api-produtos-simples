@@ -18,11 +18,13 @@ public class Produto {
     private Long id;
     private String nome;
     private double preco;
+    private String urlImg;
     
-    public Produto( Long id, String nome, double preco ) {
+    public Produto( Long id, String nome, double preco, String urlImg ) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
+        this.urlImg = urlImg;
     }
     
     public Produto() {}

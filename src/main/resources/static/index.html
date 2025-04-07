@@ -23,6 +23,10 @@
                 <label for="preco" class="form-label">Preço</label>
                 <input type="number" class="form-control" id="preco" step="0.01" required>
             </div>
+            <div class="mb-3">
+                <label for="urlImg" class="form-label">URL da imagem</label>
+                <input type="text" class="form-control" id="urlImg" required>
+            </div>
             <button type="submit" class="btn btn-primary">Adicionar Produto</button>
         </form>
     </div>
@@ -32,6 +36,7 @@
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
+                    <th>Imagem</th>
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Preço (R$)</th>

@@ -1,45 +1,51 @@
 package com.api_rest.api_rest.service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.api_rest.api_rest.model.Produto;
+import com.api_rest.api_rest.repository.ProdutoRepository;
 
 @Service
 public class ProdutoService {
 
-    private final Map<Long, Produto> produtos = new HashMap<>();
-    private long proximoId = 1;
+    @Autowired
+    private ProdutoRepository repository;
 
     public List<Produto> listarProdutos() {
-        return new ArrayList<>( produtos.values() );
+        return repository.findAll();
     }
 
     public Produto buscarId( Long id ) {
-        return produtos.get( id );
+        Optional<Produto> produto = repository.findById( id );
+        return produto.orElse(null);
     }
 
     public Produto salvar( Produto produto ) {
-        produto.setId( proximoId++ );
-        produtos.put( produto.getId(), produto );
-        return produto;
+        return repository.save( produto );
     }
 
     public Produto atualizar( Long id, Produto produtoAtualizado ) {
-        Produto produtoExistente = produtos.get( id );
+        Optional<Produto> produtoExistente = repository.findById( id );
 
-        if ( produtoExistente != null ) {
-            produtoAtualizado.setId( id );
-            produtos.put( id, produtoAtualizado );
-            return produtoAtualizado;
+        if (produtoExistente.isPresent()) {
+            Produto produto = produtoExistente.get();
+            produto.setNome( produtoAtualizado.getNome() );
+            produto.setPreco( produtoAtualizado.getPreco() );
+            produto.setUrlImg( produtoAtualizado.getUrlImg() );
+            return repository.save( produto );
         }
         return null;
     }
 
     public boolean deletar( Long id ) {
-        return produtos.remove( id ) != null;
+
+        if ( repository.existsById( id ) ) {
+            repository.deleteById( id );
+            return true;
+        }
+        return false;
     }
 }

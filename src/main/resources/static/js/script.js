@@ -8,7 +8,9 @@ function carregarProdutos() {
             tabela.innerHTML = '';
             data.forEach((produto) => {
                 const linha = document.createElement('tr');
+                linha.classList.add('align-middle');
                 linha.innerHTML = `
+                                <td width="150px" class="text-center"><img src="${produto.urlImg}" alt="${produto.nome}" width="100px"></td>
                                 <td class="text-end">${produto.id}</td>
                                 <td>${produto.nome}</td>
                                 <td class="text-end">${produto.preco.toFixed(2)}</td>
@@ -24,13 +26,14 @@ document.getElementById('form-produto').addEventListener('submit', function (e) 
 
     const nome = document.getElementById('nome').value;
     const preco = parseFloat(document.getElementById('preco').value);
+    const urlImg = document.getElementById('urlImg').value;
 
     fetch(API_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ nome, preco })
+        body: JSON.stringify({ nome, preco, urlImg })
     })
         .then(response => {
             if (!response.ok) throw new Error('Erro ao cadastrar produto');
