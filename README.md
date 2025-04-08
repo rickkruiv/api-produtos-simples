@@ -4,8 +4,6 @@ Uma API REST simples de produtos, feita com **Java + Spring Boot**, com um front
 
 Projeto ideal pra quem quer aprender o fluxo completo de requisições GET/POST, estrutura de projeto Spring, e integração com frontend puro.
 
----
-
 ## 🚀 Funcionalidades
 
 - ✅ Listagem de produtos (`GET /produtos`)
@@ -13,8 +11,6 @@ Projeto ideal pra quem quer aprender o fluxo completo de requisições GET/POST,
 - ✅ Armazenamento em memória (sem banco de dados)
 - ✅ CORS liberado pra integração com frontend
 - ✅ Frontend em Bootstrap (UI simples e direta)
-
----
 
 ## 🧩 Estrutura do Projeto
 
@@ -25,8 +21,6 @@ src
 ├── service        # Lógica de negócio
 └── repository     # Simulação de repositório (MySQL)
 ```
-
----
 
 ## 🔗 Endpoints
 
@@ -48,17 +42,20 @@ Cria um novo produto.
 ### 📤 GET `/produtos`
 Retorna todos os produtos cadastrados.
 
-![GET](image-1.png)
+![GET](image-2.png)
 
 ---
+
+### 📤 ERROR
+Retorna mensagem de erro se houver erro com a API.
+
+![ERRO](image-3.png)
 
 ## 🖥️ Frontend
 
 O frontend consome a API com `fetch` e exibe os dados em uma tabela Bootstrap. Também é possível adicionar produtos via formulário.
 
 📂 Arquivos: `script.js`
-
----
 
 ## 🛠️ Tecnologias
 
@@ -67,8 +64,6 @@ O frontend consome a API com `fetch` e exibe os dados em uma tabela Bootstrap. T
 - Bootstrap 5
 - HTML, CSS e JS puro
 - Postman (pra testes de API)
-
----
 
 ## 💡 Próximos passos
 
