@@ -23,7 +23,7 @@ src
 ├── controller     # Endpoints da API (ProdutoController)
 ├── model          # Classe Produto
 ├── service        # Lógica de negócio
-└── repository     # Simulação de repositório (em memória)
+└── repository     # Simulação de repositório (MySQL)
 ```
 
 ---
@@ -56,7 +56,7 @@ Retorna todos os produtos cadastrados.
 
 O frontend consome a API com `fetch` e exibe os dados em uma tabela Bootstrap. Também é possível adicionar produtos via formulário.
 
-📂 Arquivo: `index.html`
+📂 Arquivos: `script.js`
 
 ---
 
@@ -73,8 +73,9 @@ O frontend consome a API com `fetch` e exibe os dados em uma tabela Bootstrap. T
 ## 💡 Próximos passos
 
 - [ ] Adicionar método DELETE
-- [ ] Implementar persistência com banco de dados (H2 ou MySQL)
+- [ ] Adicionar método UPDATE
 - [ ] Criar tratamento de erros
 - [ ] Melhorar layout do frontend
+- [ ] Adicionar método para adicionar uma lista de produtos
 
 ---
